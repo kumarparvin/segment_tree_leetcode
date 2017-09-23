@@ -81,22 +81,39 @@ public:
     }
 };
 
-/**
- * Your NumArray object will be instantiated and called as such:
- * NumArray obj = new NumArray(nums);
- * obj.update(i,val);
- * int param_2 = obj.sumRange(i,j);
- */
-
-
 int main(int argc, const char * argv[]) {
-    // insert code here...
-   //std::cout << "Hello, World!\n";
-    vector<int> nums={1,6,7,3,9};
+    vector<int> nums;
+    int n;
+    int st;
+    int en;
+    cout<<"input number of element in array"<<endl;
+    cin>>n;
+    cout<<"enter elements"<<endl;
+    while(n--)
+    {
+        int a;
+        cin>>a;
+        nums.push_back(a);
+    }
     NumArray*obj = new NumArray(nums);
-    obj->update(4,55);
-    int param_2 = obj->sumRange(0,2);
-    cout<<param_2<<endl;
+    int k;
+    cout<<"press\n 1: insert\n 2: upodate\n";
+    cin>>k;
+    switch(k)
+    {
+        case 1:
+            cout<<"input range [0...."<<n-1<<"]"<<endl;
+            cin>> st>>en;
+            cout<<obj->sumRange(st,en)<<endl;
+            break;
+            
+        case 2:
+            cout<<"entern index [0...."<<n-1<<"] and new value"<<endl;
+            cin>>st>>en;
+            obj->update(st,en);
+            break;
+            
+    }
 
     return 0;
 }
