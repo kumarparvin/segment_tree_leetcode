@@ -112,6 +112,8 @@ int main(int argc, const char * argv[]) {
             cin>>st>>en;
             obj->update(st,en);
             break;
+        default:
+            break;
             
     }
 
